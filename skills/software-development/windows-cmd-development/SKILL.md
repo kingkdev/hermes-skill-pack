@@ -51,7 +51,6 @@ mv
 cp
 touch
 chmod
-sudo
 source .venv/bin/activate
 ```
 
