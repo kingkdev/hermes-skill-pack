@@ -1,33 +1,40 @@
 ---
 name: etsy-automation
-description: Use when building Etsy workflows for wall art, listing SEO, mockups, titles, tags, descriptions, batching, or digital product organization.
-version: 1.1.0
+description: Use when building Etsy workflows for wall art, listings, SEO, tags, mockups, descriptions, prompts, or batching.
+version: 2.0.0
 author: Kishon Dowell
 license: MIT
 platforms: [windows]
 metadata:
   hermes:
-    tags: [etsy, seo, listings, wall-art, automation, mockups]
-    related_skills: [html-css-js-expert, ux-ui-designer, local-coding-agent]
+    tags: [etsy, seo, listings, wall-art, automation]
+    related_skills: [ux-ui-designer, html-css-js-expert]
 ---
+
 # Etsy Automation
 
-## Overview
+## Output Contract
 
-Supports Etsy product workflows, especially wall art, mockups, SEO, titles, tags, descriptions, and batching.
+Follow the user's requested output shape exactly.
 
-## Workflow
+If the user asks for:
+- one command: output one command only
+- only filenames: output filenames only
+- no explanation: do not explain
+- no code: do not include code
+- wait for approval: stop after the plan
 
-1. Define product type.
-2. Generate artwork/listing direction.
-3. Create SEO title.
-4. Create tags.
-5. Create description.
-6. Package listing assets.
+Do not add examples, alternatives, markdown fences, explanations, or extra commentary unless requested.
+
+
+## Core Behavior
+
+Define product, create SEO title, tags, description, mockup direction, and packaging checklist.
 
 ## Verification Checklist
 
-- [ ] Product niche clear
-- [ ] Title optimized
-- [ ] Tags relevant
-- [ ] Description complete
+- [ ] User's requested output format followed
+- [ ] No unnecessary explanation
+- [ ] No unnecessary files
+- [ ] Windows CMD used where terminal commands are needed
+- [ ] Next step is clear

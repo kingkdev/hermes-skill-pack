@@ -1,45 +1,48 @@
 ---
 name: project-architect
-description: Use when starting or restructuring a project and deciding folder layout, file boundaries, naming, dependencies, and implementation sequence.
-version: 1.1.0
+description: Use when deciding folder structure, file names, implementation order, dependencies, or project organization.
+version: 2.0.0
 author: Kishon Dowell
 license: MIT
 platforms: [windows]
 metadata:
   hermes:
-    tags: [architecture, project-structure, planning, files, software-development]
-    related_skills: [windows-cmd-development, local-coding-agent, plan]
+    tags: [architecture, project-structure, planning, files]
+    related_skills: [windows-cmd-development, local-coding-agent]
 ---
+
 # Project Architect
 
-## Overview
+## Output Contract
 
-Designs clean project structures before code is written.
+Follow the user's requested output shape exactly.
 
-## When to Use
+If the user asks for:
+- one command: output one command only
+- only filenames: output filenames only
+- no explanation: do not explain
+- no code: do not include code
+- wait for approval: stop after the plan
 
-Use for new projects, messy folders, unclear file organization, or when the user wants Hermes to build something from scratch.
+Do not add examples, alternatives, markdown fences, explanations, or extra commentary unless requested.
 
-## Principles
 
-- Create the smallest useful structure.
-- Separate HTML, CSS, JavaScript, assets, tests, and docs when appropriate.
-- Avoid overengineering.
-- Make the project easy for Hermes to edit later.
+## Core Behavior
 
-## Standard Web Project
+Design the simplest useful structure.
 
-```text
-project-name/
-├── index.html
-├── style.css
-├── app.js
-├── assets/
-└── README.md
-```
+For a simple HTML website, default to exactly:
+
+index.html
+style.css
+script.js
+
+Do not add about.html, contact.html, blog/, assets/, or images/ unless the user asks for them.
 
 ## Verification Checklist
 
-- [ ] Folder structure matches task
-- [ ] Files have clear purpose
-- [ ] No unnecessary complexity
+- [ ] User's requested output format followed
+- [ ] No unnecessary explanation
+- [ ] No unnecessary files
+- [ ] Windows CMD used where terminal commands are needed
+- [ ] Next step is clear

@@ -1,37 +1,40 @@
 ---
 name: vscode-workflow
-description: Use when opening, editing, running, testing, or debugging projects inside Visual Studio Code on Windows.
-version: 1.1.0
+description: Use when opening, running, editing, or debugging projects in VS Code on Windows.
+version: 2.0.0
 author: Kishon Dowell
 license: MIT
 platforms: [windows]
 metadata:
   hermes:
-    tags: [vscode, editor, workflow, windows, debugging]
+    tags: [vscode, editor, workflow, windows]
     related_skills: [windows-cmd-development, local-coding-agent]
 ---
-# VS Code Workflow
 
-## Overview
+# Vscode Workflow
 
-Guides Hermes to work cleanly with VS Code on Windows.
+## Output Contract
 
-## When to Use
+Follow the user's requested output shape exactly.
 
-Use when the user asks how to open a project, run code, use the terminal, select Python interpreter, or test a web project.
+If the user asks for:
+- one command: output one command only
+- only filenames: output filenames only
+- no explanation: do not explain
+- no code: do not include code
+- wait for approval: stop after the plan
 
-## Core Commands
+Do not add examples, alternatives, markdown fences, explanations, or extra commentary unless requested.
 
-```cmd
-code .
-```
 
-For Python projects, select the `.venv` interpreter.
+## Core Behavior
 
-For web projects, open `index.html` in browser or run a dev server when needed.
+Use `code .` to open projects. Prefer CMD terminal. Select `.venv` interpreter for Python projects.
 
 ## Verification Checklist
 
-- [ ] Correct folder opened
-- [ ] Terminal uses CMD when requested
-- [ ] Interpreter selected when Python is used
+- [ ] User's requested output format followed
+- [ ] No unnecessary explanation
+- [ ] No unnecessary files
+- [ ] Windows CMD used where terminal commands are needed
+- [ ] Next step is clear

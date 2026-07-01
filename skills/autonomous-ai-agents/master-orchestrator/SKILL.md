@@ -1,38 +1,40 @@
 ---
 name: master-orchestrator
-description: Use when a task requires coordinating multiple skills, planning the work, selecting the right specialist, and driving the project to verified completion.
-version: 1.1.0
+description: Use when coordinating multiple skills, selecting the correct specialist workflow, planning the work, and driving tasks to verified completion.
+version: 2.0.0
 author: Kishon Dowell
 license: MIT
 platforms: [windows]
 metadata:
   hermes:
-    tags: [orchestration, planning, agents, workflow, coordination]
+    tags: [orchestration, agents, workflow, planning]
     related_skills: [local-coding-agent, project-architect, bug-hunter, code-reviewer]
 ---
+
 # Master Orchestrator
 
-## Overview
+## Output Contract
 
-Coordinates the full Hermes Skill Pack.
+Follow the user's requested output shape exactly.
 
-## Workflow
+If the user asks for:
+- one command: output one command only
+- only filenames: output filenames only
+- no explanation: do not explain
+- no code: do not include code
+- wait for approval: stop after the plan
 
-1. Identify task type.
-2. Select the right skill.
-3. Plan briefly.
-4. Execute in small steps.
-5. Verify.
-6. Hand off to another skill if needed.
+Do not add examples, alternatives, markdown fences, explanations, or extra commentary unless requested.
 
-## Rules
 
-- Do not over-plan small tasks.
-- Do not call every skill unnecessarily.
-- Always end with verified progress.
+## Core Behavior
+
+Select only the skills needed. Plan briefly. Execute in small verified steps. Do not over-plan small tasks.
 
 ## Verification Checklist
 
-- [ ] Correct skill selected
-- [ ] Work planned
-- [ ] Result verified
+- [ ] User's requested output format followed
+- [ ] No unnecessary explanation
+- [ ] No unnecessary files
+- [ ] Windows CMD used where terminal commands are needed
+- [ ] Next step is clear

@@ -1,28 +1,40 @@
 ---
 name: comfyui-expert
-description: Use when working with ComfyUI workflows, custom nodes, model folders, low-VRAM settings, Flux, SDXL, ControlNet, IPAdapter, or image-generation troubleshooting.
-version: 1.1.0
+description: Use when working with ComfyUI workflows, models, nodes, low-VRAM settings, Flux, SDXL, ControlNet, or image generation troubleshooting.
+version: 2.0.0
 author: Kishon Dowell
 license: MIT
 platforms: [windows]
 metadata:
   hermes:
-    tags: [comfyui, image-generation, flux, sdxl, controlnet, low-vram]
-    related_skills: [windows-cmd-development, lm-studio-expert]
+    tags: [comfyui, image-generation, flux, sdxl, low-vram]
+    related_skills: [windows-cmd-development]
 ---
-# ComfyUI Expert
 
-## Overview
+# Comfyui Expert
 
-Supports ComfyUI workflow building and troubleshooting on Windows.
+## Output Contract
 
-## When to Use
+Follow the user's requested output shape exactly.
 
-Use for model placement, missing nodes, workflow errors, low VRAM settings, Flux, SDXL, ControlNet, IPAdapter, and ComfyUI startup issues.
+If the user asks for:
+- one command: output one command only
+- only filenames: output filenames only
+- no explanation: do not explain
+- no code: do not include code
+- wait for approval: stop after the plan
+
+Do not add examples, alternatives, markdown fences, explanations, or extra commentary unless requested.
+
+
+## Core Behavior
+
+Use Windows paths and low-VRAM assumptions for RTX 4050 6GB unless the user says otherwise.
 
 ## Verification Checklist
 
-- [ ] Correct model folder
-- [ ] Missing nodes identified
-- [ ] VRAM settings appropriate
-- [ ] Workflow can execute
+- [ ] User's requested output format followed
+- [ ] No unnecessary explanation
+- [ ] No unnecessary files
+- [ ] Windows CMD used where terminal commands are needed
+- [ ] Next step is clear

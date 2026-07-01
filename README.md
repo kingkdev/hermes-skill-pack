@@ -1,30 +1,17 @@
-# Hermes Skill Pack
+# Hermes Skill Pack v2
 
-This pack contains Windows-first Hermes skills tailored for local coding, LM Studio, VS Code, ComfyUI, Etsy workflows, and automation.
+Strict-output Windows-first Hermes skills.
 
-## Included Skills
+## Install/update workflow
 
-- windows-cmd-development
-- local-coding-agent
-- project-architect
-- html-css-js-expert
-- vscode-workflow
-- bug-hunter
-- code-reviewer
-- full-stack-website-builder
-- lm-studio-expert
-- comfyui-expert
-- etsy-automation
-- n8n-automation
-- ux-ui-designer
-- master-orchestrator
+Copy the `skills` folder into your Git repo folder, commit, push, then run:
 
-## Simple Use
+```cmd
+hermes skills update
+```
 
-Keep this folder as your clean copy of the skill pack.
+If update does not refresh a skill, reinstall with:
 
-Each skill folder contains a `SKILL.md`.
-
-## Install Later
-
-Hermes currently shows built-in skills, but no local skills. Use this pack as the source folder when we identify or create the local Hermes skills directory.
+```cmd
+hermes skills install kingkdev/hermes-skill-pack/skills/software-development/windows-cmd-development --force --yes
+```

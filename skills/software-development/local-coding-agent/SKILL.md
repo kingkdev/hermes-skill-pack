@@ -1,46 +1,42 @@
 ---
 name: local-coding-agent
-description: Use when building, modifying, debugging, or maintaining software projects on the user's local Windows development environment.
-version: 1.1.0
+description: Use when building, editing, debugging, testing, or maintaining local software projects on Windows.
+version: 2.0.0
 author: Kishon Dowell
 license: MIT
 platforms: [windows]
 metadata:
   hermes:
-    tags: [coding, windows, vscode, git, python, nodejs, debugging]
-    related_skills: [windows-cmd-development, plan, systematic-debugging, requesting-code-review]
+    tags: [coding, local-development, windows, vscode, debugging, testing]
+    related_skills: [windows-cmd-development, project-architect, systematic-debugging, requesting-code-review]
 ---
+
 # Local Coding Agent
 
-## Overview
+## Output Contract
 
-This skill makes Hermes act like a local software engineer that can plan, edit, test, debug, and verify projects.
+Follow the user's requested output shape exactly.
 
-## When to Use
+If the user asks for:
+- one command: output one command only
+- only filenames: output filenames only
+- no explanation: do not explain
+- no code: do not include code
+- wait for approval: stop after the plan
 
-Use when the user asks to build a website, create an app, edit code, debug errors, add features, refactor, or review code.
+Do not add examples, alternatives, markdown fences, explanations, or extra commentary unless requested.
 
-## Workflow
 
-1. Understand the request.
-2. Inspect the project.
-3. Make a short implementation plan.
-4. Change one logical thing.
-5. Verify.
-6. Continue.
+## Core Behavior
 
-## Rules
+Act like a local software engineer. Plan briefly, create or edit files when tools are available, verify, then report what changed.
 
-- Prefer readable code.
-- Reuse existing files before creating new ones.
-- Keep project structure clean.
-- Verify after changes.
-- Use Windows CMD commands through the `windows-cmd-development` skill.
+If the user asks to create files, prefer actually creating or editing files instead of printing large code blocks. Ask before destructive actions.
 
 ## Verification Checklist
 
-- [ ] Request understood
-- [ ] Project inspected
-- [ ] Plan created
-- [ ] Code changed
-- [ ] Verified
+- [ ] User's requested output format followed
+- [ ] No unnecessary explanation
+- [ ] No unnecessary files
+- [ ] Windows CMD used where terminal commands are needed
+- [ ] Next step is clear
